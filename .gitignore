@@ -1,0 +1,102 @@
+A3.1 
+Transition systems
+6-tupleΓ= <S, L, c, T, so, S*> 
+S is a finite set of states
+L is a finite set of (transition) labels
+c label cost function
+T∈ S x L x S  is the transition relation
+so ∈S is the initial state
+S* ∈S is the set of the goal states.
+
+s → s’  
+s stands for predecessor of s’ 
+s’ stands for the successor of s
+
+Deterministic transition system
+For all states s and all labels l, at most one sate s’ with s → s’ 
+
+•	Reachable 
+Reachable from initial state so
+•	Solvable
+Transition system solvable if a goal path from so exists
+
+Syntax of Propositional Logic 
+Disjunction ∨  
+truth Τ
+Conjunction ∧  
+falsity ⊥
+Implication (φ → ψ) is short for (¬φ ∨ ψ)
+
+Equijunction (φ ↔ ψ) is short for ((φ → ψ) ∧ ( ψ → φ)) 
+Valuation/interpretations
+(of propositions) 
+A is a function v : A → {T, F}. 
+
+Model v |= φ (v satisfies φ; v is a model of φ; φ is true under v )
+
+
+	Satisfiable
+
+	If there is at least one valuation v such that v |= φ 
+
+	Otherwise it is unsatisfiable. 
+
+	Valid or a Tautology 
+ if v |= φ for all valuations v. 
+
+Logical consequence 
+A logical formula ψ is a logical consequence of logical formula φ, written φ |= ψ
+
+
+
+Logically equivalent 
+Two logical formulas φ and ψ are logically equivalent, written φ ≡ ψ, if φ |= ψ and ψ |= φ. 
+
+	
+A4
+•	Atomic effect
+if v∈V is a state variable, 
+“v := T” and “v :=F”  v and ¬ v
+
+•	Conjunctive effect
+If e1..en are effects, e1∧.. ∧en is an effect (n=0, is the empty effectΤ)
+•	Conditional effect
+χ ▷e (X is a logical formula and e is an effect)
+Semantics of Effects
+[e]s stands for the update set of e in s (For all effects e and states s ) 
+Defined as:  
+
+Semantics of Operators 
+s[o] stands for if o is applicable in s, the resulting state of applying o in s 
+The state s’ defined as follows: 
+
+
+Applicable: o is applicable in s if s |= pre(o) 
+Add-after-Delete 
+If a variable is simultaneously “added” (set to T) and “deleted” (set to F) 
+the value T takes precedence. 
+
+•	Example Operator: 4-Bit Counter 
+Planning Tasks 
+A planning task is a 4-tuple Π = ⟨V,I,O,γ⟩
+, which including the transition system T (Π) = ⟨S,L,c,T,s0,S⋆⟩ 
+􏰅 S is the set of all valuations of V,
+􏰅 L is the set of operators O,
+􏰅 c(o) = cost(o) for all operators o ∈ O,
+􏰅 T={⟨s,o,s⟩ | s∈S, o applicable in s, s’=s􏰁[o]􏰂}, 􏰅 
+ s0=I
+􏰅 S⋆={s∈S | s |=γ}.
+•	In satisficing planning, we must find a solution
+for a planning task (or show that no solution exists). 
+
+•	In optimal planning, we must additionally guarantee that generated solutions are of minimal cost. 
+
+
+
+
+
+
+
+
+
+
